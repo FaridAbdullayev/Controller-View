@@ -1,0 +1,27 @@
+﻿﻿@using FirstAppHomework.Models
+
+
+@{
+    List<Product> products = ViewBag.Products;
+}
+
+
+<ul>
+    @foreach (var item in products)
+    {
+        <li style="list-style:none;">
+            @if(item.Price < 10)
+            {
+                <a href="home/detail/@item.Id" style="text-decoration:none; color:red;">
+                    @item.Id - @item.Name
+                </a>
+            }
+            else{
+                <a href="home/detail/@item.Id" style="text-decoration:none; color:black;">
+                @item.Id - @item.Name
+                </a>
+            }
+           
+        </li>
+    }
+</ul>
